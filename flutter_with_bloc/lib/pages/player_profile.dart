@@ -17,7 +17,7 @@ class _PlayerProfileState extends State<PlayerProfile> {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Colors.transparent,
-        title: Image.network(widget.players.nation.imageUrls.small),
+        title: Image.network(widget.players.nation.imageUrls.medium),
         centerTitle: true,
       ),
       body: Center(
@@ -31,18 +31,19 @@ class _PlayerProfileState extends State<PlayerProfile> {
                   fontSize: 45,
                   color: Colors.white10,
                   letterSpacing: 12.0,
+                  fontStyle: FontStyle.italic
                 ),
               ),
             ),
             CircleAvatar(
               child: Image.network(widget.players.headshot.imgUrl),
               backgroundColor: Colors.transparent,
-              radius: 75.0,
+              radius: 100.0,
             ),
             Padding(
               padding: const EdgeInsets.only(top: 18.0),
               child: Container(
-                height: 250.0,
+                height: 355.0,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
@@ -53,7 +54,7 @@ class _PlayerProfileState extends State<PlayerProfile> {
                       child: Container(
                         width: MediaQuery.of(context).size.width - 50.0,
                         height: 300.0,
-                        color: Colors.amber,
+                        color: Colors.grey,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -246,6 +247,81 @@ class _PlayerProfileState extends State<PlayerProfile> {
                                       widget.players.balance.toString(),
                                       style: TextStyle(
                                           color: Colors.blue[900],
+                                          fontSize: 18.0),
+                                    ),
+                                    backgroundColor: Colors.white,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      "balance",
+                                      style: TextStyle(
+                                          color: Colors.white60,
+                                          fontSize: 18.0),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: <Widget>[
+                              Column(
+                                children: <Widget>[
+                                  CircleAvatar(
+                                    radius: 40.0,
+                                    child: Text(
+                                      widget.players.atkWorkRate,
+                                      style: TextStyle(
+                                          color: Colors.red[900],
+                                          fontSize: 18.0),
+                                    ),
+                                    backgroundColor: Colors.white,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      "dribbling",
+                                      style: TextStyle(
+                                          color: Colors.white60,
+                                          fontSize: 18.0),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: <Widget>[
+                                  CircleAvatar(
+                                    radius: 40.0,
+                                    child: Text(
+                                      widget.players.birthdate,
+                                      style: TextStyle(
+                                          color: Colors.red[900],
+                                          fontSize: 18.0),
+                                    ),
+                                    backgroundColor: Colors.white,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      "finishing",
+                                      style: TextStyle(
+                                          color: Colors.white60,
+                                          fontSize: 18.0),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: <Widget>[
+                                  CircleAvatar(
+                                    radius: 40.0,
+                                    child: Text(
+                                      widget.players.crossing.toString(),
+                                      style: TextStyle(
+                                          color: Colors.red[900],
                                           fontSize: 18.0),
                                     ),
                                     backgroundColor: Colors.white,
